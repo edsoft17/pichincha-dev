@@ -1,0 +1,93 @@
+<div class="container">
+    <h2 class="titulo">Formulario de Registro</h2>
+    <form id="formProduct" autocomplete="off" [formGroup]="formProduct" class="formulario" (ngSubmit)="sendRequest()">
+        <div class="item-form">
+            <label>ID</label>
+            <input [ngClass]="{'error-form': formProduct.get('id')?.invalid}" tabindex="-1" formControlName="id" type="text">
+
+            <span *ngIf="formProduct.get('id')?.getError('required')">
+                El id es obligatorio
+            </span>
+            <span *ngIf="formProduct.get('id')?.getError('minlength')">
+                Mínimo 3 caracteres
+            </span>
+            <span *ngIf="formProduct.get('id')?.getError('maxlength')">
+                Máximo 10 caracteres
+            </span>
+        </div>
+        <div class="item-form">
+            <label>Nombre</label>
+            <input [ngClass]="{'error-form': formProduct.get('name')?.invalid}" formControlName="name" type="text">
+            <span *ngIf="formProduct.get('name')?.getError('required')">
+                El nombre es obligatorio
+            </span>
+            <span *ngIf="formProduct.get('name')?.getError('minlength')">
+                Mínimo 5 caracteres
+            </span>
+            <span *ngIf="formProduct.get('name')?.getError('maxlength')">
+                Máximo 100 caracteres
+            </span>
+        </div>
+        <div class="item-form">
+            <label>Descripción</label>
+            <input [ngClass]="{'error-form': formProduct.get('description')?.invalid}" formControlName="description" type="text">
+            <span *ngIf="formProduct.get('description')?.getError('required')">
+                La descripción es obligatorio
+            </span>
+            <span *ngIf="formProduct.get('description')?.getError('minlength')">
+                Mínimo 10 caracteres
+            </span>
+            <span *ngIf="formProduct.get('description')?.getError('maxlength')">
+                Máximo 200 caracteres
+            </span>
+        </div>
+        <div class="item-form">
+            <label>Logo</label>
+            <input [ngClass]="{'error-form': formProduct.get('logo')?.invalid}" formControlName="logo" type="text">
+            <span *ngIf="formProduct.get('logo')?.getError('required')">
+                El logo es obligatorio
+            </span>
+            <span *ngIf="formProduct.get('logo')?.getError('minlength')">
+                Mínimo 10 caracteres
+            </span>
+            <span *ngIf="formProduct.get('logo')?.getError('maxlength')">
+                Máximo 200 caracteres
+            </span>
+        </div>
+        <div class="item-form">
+            <label>Fecha de Liberación</label>
+            <input [ngClass]="{'error-form': formProduct.get('date_release')?.invalid}" type="date" formControlName="date_release">
+            <span *ngIf="formProduct.get('date_release')?.getError('required')">
+                La fecha de liberación es obligatorio
+            </span>
+            <span *ngIf="formProduct.get('date_release')?.getError('dateCurrent')">
+                La fecha debe ser mayor o igual a la fecha actual
+            </span>
+        </div>
+        <div class="item-form">
+            <label>Fecha Revisión</label>
+            <input [ngClass]="{'error-form': formProduct.get('date_revision')?.invalid || formProduct.getError('minDate')}" type="date" formControlName="date_revision">
+            <span *ngIf="formProduct.get('date_release')?.getError('required')">
+                La fecha de revisión es obligatorio
+            </span>
+            <span *ngIf="formProduct.getError('minDate')">
+                La fecha debe ser mayor o igual a la fecha actual
+            </span>
+        </div>
+    </form>
+    <div class="container-button">
+        <p-button
+            [padding]="25" 
+            [style]="'normal'" 
+            [text]="'Reiniciar'" 
+            (click)="clearForm()"
+        ></p-button>
+        <p-button
+            [padding]="25" 
+            [style]="'add'"
+            [text]="'Enviar'" 
+            [nameForm]="'formProduct'"
+            type="submit"
+        ></p-button>
+    </div>
+</div>

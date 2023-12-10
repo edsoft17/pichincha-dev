@@ -1,0 +1,13 @@
+.add-button {
+    padding: 15px;
+    border: none;
+    background-color: #F9DE4B;
+    color: #1A2A5C;
+}
+
+.normal-button {
+    padding: 15px;
+    border: none;
+    background-color: #dddddd;
+    color: #1A2A5C;
+}

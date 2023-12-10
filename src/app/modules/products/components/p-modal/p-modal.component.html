@@ -1,0 +1,13 @@
+<div class="modal-container">
+    <div class="modal">
+        <div class="modal-body">
+            <div class="modal-content">
+                <h3>¿Estás seguro de eliminar el producto {{product.name}}?</h3>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p-button (click)="closeModal()">Cancelar</p-button>
+            <p-button [style]="'add'" (click)="deleteProduct()">Confirmar</p-button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<button 
+    [ngStyle]="{'padding': padding + 'px'}"
+    [ngClass]="{'add-button': style === 'add','normal-button': style === 'normal'}"
+    [attr.form]="nameForm"
+>
+    {{text}}
+</button>

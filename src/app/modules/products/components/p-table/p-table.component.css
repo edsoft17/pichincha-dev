@@ -1,0 +1,49 @@
+.content-table{
+    margin-top: 15px;
+    background-color: white;
+    width: 70vw;
+    border-collapse: collapse;
+}
+
+.content-table thead tr{
+    background-color: #F9FAFC;
+}
+
+.content-table th, .content-table td{
+    text-align: center;
+    padding: 18px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+#logo {
+    height: 40px;
+    width: 80px;
+}
+
+.dropdown {
+    position: relative;
+    text-align: left;
+}
+
+.dropdown ul {
+    position: absolute;
+    max-height:0px;
+    overflow: hidden;
+}
+
+.dropdown:hover ul {
+    position: absolute;
+    max-height: 50px;
+    overflow: hidden;
+}
+
+.dropdown:hover ul li {
+    padding: 4px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: #F9FAFC;
+    cursor: pointer;
+}

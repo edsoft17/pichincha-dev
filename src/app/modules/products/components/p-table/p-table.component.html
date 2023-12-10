@@ -1,0 +1,32 @@
+<table class="content-table">
+    <thead>
+      <tr>
+        <th>Logo</th>
+        <th>Nombre del Producto</th>
+        <th>Descripción</th>
+        <th>Fecha de liberación</th>
+        <th>Fecha de reestructuración</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>
+                <img id="logo" [src]="product.logo" alt="logo de banco">
+            </td>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.date_release | date:'dd/MM/YYYY'}}</td>
+            <td>{{product.date_revision | date:'dd/MM/YYYY'}}</td>
+            <td>
+                <div class="dropdown">
+                    <span>⋮</span>
+                    <ul>
+                        <li (click)="editProduct(product.id)">Editar</li>
+                        <li (click)="deleteProduct(product)">Eliminar</li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

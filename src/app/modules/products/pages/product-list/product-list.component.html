@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="element-flex">
+        <input
+            #inputSearch
+            class="text-buscar" 
+            type="text" 
+            placeholder="Search..."
+            (keyup)="searchProduct(inputSearch.value)"
+        >
+        <p-button [style]="'add'" [text]="'Agregar'" (click)="goToDetail()"></p-button>
+    </div>
+    <p-table 
+        [products]="productsFilter"
+        (eventEdit)="editProduct($event)"
+        (eventDelete)="deleteProduct($event)">
+    </p-table>
+    <div class="element-flex">
+        <span>{{productsFilter.length + ' Resultados'}}</span>
+        <select>
+            <option value="5">5</option>
+            <option value="5">10</option>
+            <option value="5">20</option>
+        </select>
+    </div>
+    <p-modal *ngIf="modalStatus" [product]="productDeleted"></p-modal>
+</div>

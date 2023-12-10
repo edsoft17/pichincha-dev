@@ -1,0 +1,62 @@
+.container {
+    background-color: white;
+    width: 50vw;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.titulo {
+    font-size: 40px;
+    border-bottom: 1px solid black;
+    padding: 20px;
+}
+
+.formulario {
+    padding: 30px;
+    display: grid;
+    row-gap: 20px;
+    column-gap: 80px;
+    grid-template-columns: auto auto
+}
+
+label{
+    display: block;
+    text-align: left;
+}
+
+.columna {
+    grid-column: 1/2;
+}
+
+.item-form input {
+    font-size: 16px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    height: 40px;
+    width: 100%;
+}
+.error-form:focus{outline: none}
+
+.error-form {
+    text-align: left;
+    height: 40px;
+    border-color: red;
+}
+
+div > span {
+    color: red;
+}
+
+.container-button {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button-reset {
+    padding: 20px;
+}
+
+.button-send {
+    padding: 20px;
+}
